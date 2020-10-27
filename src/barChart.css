@@ -1,0 +1,10 @@
+
+
+.bar:hover {
+    fill: darkgray;
+}
+
+.center{
+    dominant-baseline:middle;
+    text-anchor:middle
+}

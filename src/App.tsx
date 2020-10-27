@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Q2} from "./Q2";
+import {Q1} from "./Q1";
 
 function App() {
+  const [page,setPage]=useState<'Q1'|'Q2'>("Q1")
+
+
+
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+          Star-Wars
       </header>
+      <div>
+      <div>
+
+          <button disabled={page==='Q1'} onClick={()=>setPage("Q1")}>Question 1</button>
+          <button disabled={page==='Q2'} onClick={()=>setPage("Q2")}>Question 2</button>
+
+        </div>
+
+          {page==="Q1"&& <Q1/>}
+          {page==="Q2"&& <Q2/>}
+
+      </div>
+
     </div>
   );
 }
