@@ -24,10 +24,10 @@ export const useStartWarsData=():StartWarsDataRes=>{
         } )).then(((allRes)=>{
             setCallState({
                 type:'ready',
-                data:allRes.reduce((acc:any,val,index):StarWarsData=>{
+                data:allRes.reduce((acc,val,index):StarWarsData=>{
                     acc[calls[index].key]=val
                     return  acc
-                },{} as StarWarsData)
+                },{} )
             })
         })).catch((error:any)=>{
             setCallState({type:"error",error})
